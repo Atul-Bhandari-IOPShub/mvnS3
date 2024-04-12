@@ -1,13 +1,14 @@
 node {
     def GIT_URL = 'git@github.com:Atul-Bhandari-IOPShub/mvnS3.git'
     def branchName = '$Branch'
+    def dir='my-app'
 
    // stage('clone') {
      //   git url: GIT_URL , branch: "branchName"
    // }
 
     stage('Maven Build') {
-        dir("my-app") {
+        dir("$dir") {
             sh 'mvn install'
         }
     }
