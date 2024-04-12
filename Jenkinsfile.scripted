@@ -1,7 +1,6 @@
     def GIT_URL = 'git@github.com:Atul-Bhandari-IOPShub/mvnS3.git'
     def branchName = '$Branch'
 
-    // Clone the Git repository
     stage('clone') {
         git url: $GIT_URL , branch: "$BranchName", destinationDir: "$WORKSPACE"
     }
@@ -13,8 +12,7 @@
     }
     stage('Maven Deploy') {
         dir("my-app") {
-            sh '/mvn deploy'
+            sh 'mvn deploy'
         }
     }
-}
 
