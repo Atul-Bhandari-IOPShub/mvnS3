@@ -8,7 +8,7 @@ node {
    // }
 
     stage('Maven Build') {
-        dir("$dir") {
+        dir("dir") {
             sh 'mvn install'
         }
     }
