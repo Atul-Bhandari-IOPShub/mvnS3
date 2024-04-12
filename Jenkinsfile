@@ -3,6 +3,7 @@ pipeline {
     environment {
         GIT_URL = "git@github.com:Atul-Bhandari-IOPShub/mvnS3.git"
         BRANCH_NAME = "$Branch"
+        DIR="my-app"
     } 	
     stages {
         stage("code checkout") {
@@ -13,14 +14,14 @@ pipeline {
         }
         stage('Build and install') {
             steps {
-                dir("my-app") {
+                dir("$DIR") {
                     sh 'mvn install'
                 }
             }
         }
         stage('Deploy') {
             steps {
-                dir("my-app"){
+                dir("$DIR"){
                 sh 'mvn deploy'
                 }
             }
