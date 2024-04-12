@@ -3,9 +3,9 @@ node {
     def branchName = '$Branch'
     
 
-   // stage('clone') {
-     //   git url: GIT_URL , branch: "branchName"
-   // }
+    stage('clone') {
+        git url: GIT_URL , branch: "branchName"
+    }
 
     stage('Maven Build') {
         dir("my-app") {
