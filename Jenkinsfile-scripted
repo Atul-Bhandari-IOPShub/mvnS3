@@ -1,3 +1,4 @@
+node {
     def GIT_URL = 'git@github.com:Atul-Bhandari-IOPShub/mvnS3.git'
     def branchName = '$Branch'
 
@@ -15,4 +16,4 @@
             sh 'mvn deploy'
         }
     }
-
+}
