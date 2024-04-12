@@ -2,7 +2,7 @@
     def branchName = '$Branch'
 
     stage('clone') {
-        git url: GIT_URL , branch: "branchName", destinationDir: "$WORKSPACE"
+        git url: GIT_URL , branch: "branchName"
     }
 
     stage('Maven Build') {
